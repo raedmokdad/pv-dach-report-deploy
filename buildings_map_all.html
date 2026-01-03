@@ -1157,14 +1157,18 @@
                 
                 const lat = parseFloat(targetLat);
                 const lon = parseFloat(targetLon);
-                const threshold = 0.000001; // Very precise matching
+                const threshold = 0.00001; // Increased threshold for better matching
                 
-                // Find building by exact coordinates
+                console.log('🔍 Suche Gebäude mit Koordinaten:', lat, lon);
+                
+                // Find building by coordinates
                 const building = buildingsData.find(b => 
                     b.lat && b.lon &&
                     Math.abs(b.lat - lat) < threshold && 
                     Math.abs(b.lon - lon) < threshold
                 );
+                
+                console.log('🎯 Gefundenes Gebäude:', building ? building.address : 'NICHT GEFUNDEN');
                 
                 if (building) {
                     console.log('✅ Gebäude gefunden:', building.address || building.id);
