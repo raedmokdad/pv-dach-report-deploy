@@ -32,87 +32,81 @@
         .header {
             background: white;
             border: 1px solid #e2e8f0;
-            padding: 25px;
-            border-radius: 12px;
+            padding: 12px;
+            border-radius: 8px;
             text-align: center;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            margin-bottom: 12px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
         }
 
         .header h1 {
             color: #1e293b;
-            font-size: 2.2em;
-            margin-bottom: 8px;
+            font-size: 1.3em;
+            margin-bottom: 2px;
             font-weight: 700;
         }
 
         .header p {
             color: #64748b;
-            font-size: 1.1em;
-            margin-bottom: 12px;
+            font-size: 0.8em;
+            margin-bottom: 4px;
             font-weight: 400;
         }
 
         .header .subtitle {
             background: #f1f5f9;
             border: 1px solid #cbd5e1;
-            border-radius: 8px;
-            padding: 8px 16px;
+            border-radius: 6px;
+            padding: 2px 8px;
             display: inline-block;
             color: #475569;
             font-weight: 500;
-            font-size: 0.9em;
+            font-size: 0.7em;
         }
 
         .stats {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            margin-bottom: 20px;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px;
+            margin-bottom: 10px;
         }
 
         .stat {
             background: white;
             border: 1px solid #e2e8f0;
-            padding: 20px;
-            border-radius: 8px;
+            padding: 8px 10px;
+            border-radius: 6px;
             text-align: center;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-            transition: all 0.2s ease;
-        }
-
-        .stat:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
         }
 
         .stat-number {
-            font-size: 2.2em;
+            font-size: 1.4em;
             font-weight: 700;
             color: #1e293b;
-            margin-bottom: 8px;
+            margin-bottom: 2px;
         }
 
         .stat-label {
             color: #64748b;
-            font-size: 0.9em;
+            font-size: 0.7em;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.4px;
             font-weight: 500;
-            line-height: 1.3;
+            line-height: 1.2;
         }
 
         .controls {
             background: white;
             border: 1px solid #e2e8f0;
-            padding: 20px;
-            border-radius: 8px;
-            margin-bottom: 20px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            padding: 10px 12px;
+            border-radius: 6px;
+            margin-bottom: 10px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
         }
 
         .filter-section {
-            margin-bottom: 15px;
+            margin-bottom: 8px;
         }
 
         .filter-section:last-child {
@@ -120,10 +114,10 @@
         }
 
         .filter-title {
-            font-size: 1em;
+            font-size: 0.8em;
             font-weight: 600;
             color: #374151;
-            margin-bottom: 10px;
+            margin-bottom: 6px;
             display: flex;
             align-items: center;
             gap: 6px;
@@ -132,19 +126,19 @@
         .filter-grid {
             display: flex;
             flex-wrap: wrap;
-            gap: 8px;
+            gap: 6px;
         }
 
         .filter-btn {
             background: #f8fafc;
             border: 1px solid #d1d5db;
-            padding: 6px 12px;
+            padding: 4px 10px;
             border-radius: 6px;
             cursor: pointer;
             transition: all 0.2s ease;
             font-weight: 500;
             color: #374151;
-            font-size: 0.85em;
+            font-size: 0.75em;
             display: flex;
             align-items: center;
             gap: 4px;
@@ -224,8 +218,10 @@
         }
 
         .info-popup {
-            max-width: 350px;
+            max-width: 550px;
             font-family: 'Segoe UI', sans-serif;
+            max-height: 650px;
+            overflow-y: auto;
         }
 
         .info-popup h3 {
@@ -312,6 +308,35 @@
             <div class="subtitle">
                 ⚡ 5201 analysierte Gebäude • 🤖 Gemini AI • 🌍 OpenStreetMap
             </div>
+            
+            <!-- Farblegenden Sektion -->
+            <div style="margin-top: 20px; background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%); padding: 20px; border-radius: 12px; border: 1px solid #3b82f6; box-shadow: 0 4px 15px rgba(30, 58, 138, 0.3);">
+                <div style="color: white; font-weight: 700; margin-bottom: 15px; font-size: 1.1em; text-shadow: 0 2px 4px rgba(0,0,0,0.3); text-align: center;">
+                    🎨 Farbkodierung der Karte
+                </div>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px;">
+                    <div style="display: flex; align-items: center; gap: 10px; background: rgba(255,255,255,0.95); padding: 10px 14px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.2); box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+                        <div style="width: 18px; height: 18px; border-radius: 50%; background-color: #27ae60; border: 3px solid white; box-shadow: 0 2px 6px rgba(0,0,0,0.2);"></div>
+                        <span style="color: #1f2937; font-size: 0.9em; font-weight: 600;">Sehr hoch (>500k kWh/Jahr)</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 10px; background: rgba(255,255,255,0.95); padding: 10px 14px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.2); box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+                        <div style="width: 18px; height: 18px; border-radius: 50%; background-color: #f39c12; border: 3px solid white; box-shadow: 0 2px 6px rgba(0,0,0,0.2);"></div>
+                        <span style="color: #1f2937; font-size: 0.9em; font-weight: 600;">Hoch (100k-500k kWh/Jahr)</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 10px; background: rgba(255,255,255,0.95); padding: 10px 14px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.2); box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+                        <div style="width: 18px; height: 18px; border-radius: 50%; background-color: #3498db; border: 3px solid white; box-shadow: 0 2px 6px rgba(0,0,0,0.2);"></div>
+                        <span style="color: #1f2937; font-size: 0.9em; font-weight: 600;">Mittel (50k-100k kWh/Jahr)</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 10px; background: rgba(255,255,255,0.95); padding: 10px 14px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.2); box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+                        <div style="width: 18px; height: 18px; border-radius: 50%; background-color: #95a5a6; border: 3px solid white; box-shadow: 0 2px 6px rgba(0,0,0,0.2);"></div>
+                        <span style="color: #1f2937; font-size: 0.9em; font-weight: 600;">Gering (<50k kWh/Jahr)</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 10px; background: rgba(255,255,255,0.95); padding: 10px 14px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.2); box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+                        <div style="width: 18px; height: 18px; border-radius: 50%; background-color: #e74c3c; border: 3px solid white; box-shadow: 0 2px 6px rgba(0,0,0,0.2);"></div>
+                        <span style="color: #1f2937; font-size: 0.9em; font-weight: 600;">Kein Potenzial</span>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="stats" id="stats">
@@ -360,41 +385,41 @@
             
             <div class="separator"></div>
             
-            <div class="filter-section">
-                <div class="filter-title">🏗️ Gebäude-Eigenschaften</div>
-                <div class="filter-grid">
-                    <button class="filter-btn" data-filter="existing_pv">
-                        🔆 Mit PV
-                    </button>
-                    <button class="filter-btn" data-filter="obstacles">
-                        ⚠️ Hindernisse
-                    </button>
-                    <button class="filter-btn" data-filter="simple_install">
-                        ✅ Einfach
-                    </button>
-                    <button class="filter-btn" data-filter="good_condition">
-                        🏆 Gut erhalten
-                    </button>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                <div class="filter-section">
+                    <div class="filter-title">🏗️ Gebäude-Eigenschaften</div>
+                    <div class="filter-grid">
+                        <button class="filter-btn" data-filter="existing_pv">
+                            🔆 Mit PV
+                        </button>
+                        <button class="filter-btn" data-filter="obstacles">
+                            ⚠️ Hindernisse
+                        </button>
+                        <button class="filter-btn" data-filter="simple_install">
+                            ✅ Einfach
+                        </button>
+                        <button class="filter-btn" data-filter="good_condition">
+                            🏆 Gut erhalten
+                        </button>
+                    </div>
                 </div>
-            </div>
-            
-            <div class="separator"></div>
-            
-            <div class="filter-section">
-                <div class="filter-title">🏠 Dachmaterial & Umwelt</div>
-                <div class="filter-grid">
-                    <button class="filter-btn" data-filter="metal_roof">
-                        🔧 Metall
-                    </button>
-                    <button class="filter-btn" data-filter="tile_roof">
-                        🧱 Ziegel
-                    </button>
-                    <button class="filter-btn" data-filter="concrete_roof">
-                        🏢 Beton
-                    </button>
-                    <button class="filter-btn" data-filter="eco_saving">
-                        🌿 Hohe CO₂-Einsparung
-                    </button>
+                
+                <div class="filter-section">
+                    <div class="filter-title">🏠 Dachmaterial & Umwelt</div>
+                    <div class="filter-grid">
+                        <button class="filter-btn" data-filter="metal_roof">
+                            🔧 Metall
+                        </button>
+                        <button class="filter-btn" data-filter="tile_roof">
+                            🧱 Ziegel
+                        </button>
+                        <button class="filter-btn" data-filter="concrete_roof">
+                            🏢 Beton
+                        </button>
+                        <button class="filter-btn" data-filter="eco_saving">
+                            🌿 Hohe CO₂-Einsparung
+                        </button>
+                    </div>
                 </div>
             </div>
             
@@ -410,7 +435,7 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
     
-    <!-- Building Data (External for performance) -->
+    <!-- Load buildings data -->
     <script src="buildings_all_data.js"></script>
 
     <script>
@@ -592,11 +617,252 @@
             return num.toLocaleString('de-DE');
         }
 
+        // Escape HTML to prevent XSS
+        function escapeHtml(text) {
+            if (!text) return '';
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        // Print building info in a new window
+        function printBuilding(building) {
+            const printWindow = window.open('', '_blank', 'width=800,height=600');
+            
+            const address = building.address || `Gebäude #${building.id}`;
+            const solar = building.solar || {};
+            const gemini = building.gemini || {};
+            const existingPv = building.existing_pv || {};
+            
+            const obstaclesText = gemini.obstacles && Array.isArray(gemini.obstacles) 
+                ? gemini.obstacles.map(o => typeof o === 'string' ? o : o.type || 'Unbekannt').join(', ') || 'Keine'
+                : 'Keine';
+            
+            const imagePath = building.image || '';
+            const fullImagePath = imagePath.startsWith('luftbilder/') ? imagePath : `luftbilder/${imagePath}`;
+            
+            const formatNum = (num) => {
+                if (num === undefined || num === null) return 'N/A';
+                return new Intl.NumberFormat('de-DE', { maximumFractionDigits: 1 }).format(num);
+            };
+            
+            let statusColor = '#ef4444';
+            let statusText = 'Geringes Potential';
+            if (solar.yearly_kwh >= 500) {
+                statusColor = '#3b82f6';
+                statusText = 'Sehr hoch (>500k kWh/Jahr)';
+            } else if (solar.yearly_kwh >= 100) {
+                statusColor = '#10b981';
+                statusText = 'Hoch (100k-500k kWh/Jahr)';
+            } else if (solar.yearly_kwh >= 50) {
+                statusColor = '#f59e0b';
+                statusText = 'Mittel (50k-100k kWh/Jahr)';
+            }
+            
+            printWindow.document.write(`
+                <!DOCTYPE html>
+                <html>
+                <head>
+                    <meta charset="UTF-8">
+                    <title>Gebäudeinformationen - ${address}</title>
+                    <style>
+                        @page { size: A4; margin: 15mm; }
+                        body { 
+                            font-family: Arial, sans-serif; 
+                            line-height: 1.4; 
+                            color: #333;
+                            max-width: 100%;
+                            margin: 0;
+                            padding: 10px;
+                        }
+                        h1 { 
+                            color: #2563eb; 
+                            border-bottom: 2px solid #2563eb; 
+                            padding-bottom: 6px;
+                            margin-bottom: 12px;
+                            font-size: 20px;
+                        }
+                        h2 { 
+                            color: #1e40af; 
+                            margin-top: 12px;
+                            margin-bottom: 6px;
+                            font-size: 16px;
+                            border-left: 3px solid #2563eb;
+                            padding-left: 8px;
+                        }
+                        .info-grid { 
+                            display: grid; 
+                            grid-template-columns: 1fr 1fr; 
+                            gap: 8px; 
+                            margin: 8px 0;
+                        }
+                        .info-item { 
+                            background: #f3f4f6; 
+                            padding: 8px; 
+                            border-radius: 4px;
+                        }
+                        .info-label { 
+                            font-weight: bold; 
+                            color: #4b5563; 
+                            font-size: 10px;
+                            text-transform: uppercase;
+                        }
+                        .info-value { 
+                            font-size: 14px; 
+                            color: #111827; 
+                            margin-top: 3px;
+                        }
+                        .status-badge {
+                            display: inline-block;
+                            padding: 6px 12px;
+                            border-radius: 16px;
+                            font-weight: bold;
+                            margin: 6px 0;
+                            font-size: 13px;
+                        }
+                        .image-container {
+                            text-align: center;
+                            margin: 12px 0;
+                            page-break-inside: avoid;
+                        }
+                        .image-container img {
+                            max-width: 100%;
+                            height: auto;
+                            border: 2px solid #e5e7eb;
+                            border-radius: 6px;
+                        }
+                        .notes-section {
+                            background: #fef3c7;
+                            padding: 10px;
+                            border-left: 3px solid #f59e0b;
+                            margin: 8px 0;
+                            border-radius: 4px;
+                        }
+                    </style>
+                </head>
+                <body>
+                    <h1>🏠 ${address}</h1>
+                    
+                    <div class="status-badge" style="background: ${statusColor}; color: white;">
+                        ${statusText}
+                    </div>
+                    
+                    <h2>☀️ Solar-Potential</h2>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <div class="info-label">Jahresertrag</div>
+                            <div class="info-value">${formatNum(solar.yearly_kwh)} kWh</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Max. Module</div>
+                            <div class="info-value">${solar.max_panels || 'N/A'}</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Sonnenstunden</div>
+                            <div class="info-value">${formatNum(solar.sunshine_hours)} h/Jahr</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Panel-Fläche</div>
+                            <div class="info-value">${formatNum(solar.panel_area_m2)} m²</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">CO₂-Einsparung</div>
+                            <div class="info-value">${formatNum(solar.co2_offset_kg)} kg/Jahr</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Dachtyp</div>
+                            <div class="info-value">${solar.roof_type || 'N/A'}</div>
+                        </div>
+                    </div>
+                    
+                    <h2>🏗️ Gebäude-Details</h2>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <div class="info-label">Funktion</div>
+                            <div class="info-value">${building.funktion || 'N/A'}</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Nutzung</div>
+                            <div class="info-value">${building.gebnutzbez || 'N/A'}</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Fläche</div>
+                            <div class="info-value">${formatNum(building.area_m2)} m²</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Bestehende PV</div>
+                            <div class="info-value">${existingPv.has_pv ? '✅ Ja' : '❌ Nein'}</div>
+                        </div>
+                        <div class="info-item" style="grid-column: 1 / -1;">
+                            <div class="info-label">📍 GPS-Koordinaten</div>
+                            <div class="info-value" style="font-family: monospace; font-size: 14px;">${building.lat.toFixed(6)}, ${building.lon.toFixed(6)}</div>
+                        </div>
+                    </div>
+                    
+                    <h2>🏚️ Dachmaterial & Zustand</h2>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <div class="info-label">Material</div>
+                            <div class="info-value">${gemini.roof_material || 'N/A'}</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Farbe</div>
+                            <div class="info-value">${gemini.roof_color || 'N/A'}</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Zustand</div>
+                            <div class="info-value">${gemini.roof_condition || 'N/A'}</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Nutzbare Fläche</div>
+                            <div class="info-value">${gemini.usable_percentage || 'N/A'}%</div>
+                        </div>
+                    </div>
+                    
+                    <div class="image-container">
+                        <img src="${fullImagePath}" alt="Luftbild" onerror="this.style.display='none'">
+                    </div>
+                    
+                    <h2>⚠️ Hindernisse</h2>
+                    <div class="info-item">
+                        <div class="info-value">${obstaclesText}</div>
+                    </div>
+                    
+                    ${gemini.notes ? `
+                    <h2>📝 Hinweise</h2>
+                    <div class="notes-section">
+                        ${escapeHtml(gemini.notes)}
+                    </div>
+                    ` : ''}
+                    
+                    <p style="margin-top: 30px; text-align: center; color: #6b7280; font-size: 12px;">
+                        Generiert am ${new Date().toLocaleDateString('de-DE')} | 
+                        Koordinaten: ${building.lat.toFixed(6)}, ${building.lon.toFixed(6)}
+                    </p>
+                </body>
+                </html>
+            `);
+            
+            printWindow.document.close();
+            printWindow.onload = function() {
+                printWindow.focus();
+                printWindow.print();
+            };
+        }
+
         // Create popup content
         function createPopupContent(building) {
             const solar = building.solar || {};
             const gemini = building.gemini || {};
             const existing = building.existing_pv || {};
+
+            // Debug: Log building data
+            console.log('Building data:', {
+                id: building.id,
+                address: building.address,
+                funktion: building.funktion,
+                gebnutzbez: building.gebnutzbez
+            });
 
             let statusClass = 'status-none';
             let statusText = 'Kein Potenzial';
@@ -615,54 +881,192 @@
                 statusText = 'Geringes Potenzial';
             }
 
+            // Gebäude-Titel mit Adresse/Name falls verfügbar
+            let buildingTitle = '🏠 Gebäude #' + building.id;
+            
+            // Adresse und Funktion aus den tatsächlichen Datenfeldern
+            let addressInfo = building.address || '';
+            let functionInfo = building.funktion || building.gebnutzbez || '';
+            
+            // Debug log
+            console.log('Address info:', addressInfo, 'Function info:', functionInfo);
+            
+            // Titel intelligent zusammensetzen
+            if (addressInfo && addressInfo.trim() !== '') {
+                if (functionInfo && functionInfo.trim() !== '' && functionInfo !== addressInfo) {
+                    // Zeige Funktion und Adresse
+                    buildingTitle = `🏠 ${addressInfo}`;
+                    if (functionInfo.length < 30) { // Nur kurze Funktionen anhängen
+                        buildingTitle = `🏠 ${functionInfo} - ${addressInfo}`;
+                    }
+                } else {
+                    // Nur Adresse
+                    buildingTitle = `🏠 ${addressInfo}`;
+                }
+            } else if (functionInfo && functionInfo.trim() !== '') {
+                // Nur Funktion wenn keine Adresse
+                buildingTitle = `🏠 ${functionInfo}`;
+            }
+            
+            // Titel kürzen falls zu lang
+            if (buildingTitle.length > 60) {
+                if (addressInfo) {
+                    buildingTitle = `🏠 ${addressInfo}`;
+                } else {
+                    buildingTitle = buildingTitle.substring(0, 57) + '...';
+                }
+            }
+
+            // Prepare obstacles text
+            let obstaclesText = '';
+            if (gemini.obstacles && Array.isArray(gemini.obstacles) && gemini.obstacles.length > 0) {
+                obstaclesText = gemini.obstacles.map(o => {
+                    if (typeof o === 'string') return o;
+                    if (o && o.type) return o.type;
+                    if (o && o.name) return o.name;
+                    return 'Unbekannt';
+                }).join(', ');
+            }
+
             return `
                 <div class="info-popup">
-                    <h3>🏠 Gebäude #${building.id}</h3>
-                    <div class="status-badge ${statusClass}">${statusText}</div>
+                    <h3>${buildingTitle}</h3>
+                    <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin: 8px 0;">
+                        <div class="status-badge ${statusClass}">${statusText}</div>
+                        <button onclick="printBuilding(buildingsData[${building.id}])" 
+                           style="background: #ef4444; color: white; padding: 6px 12px; border-radius: 6px; border: none; font-size: 0.85em; display: inline-block; font-weight: 600; cursor: pointer;">
+                            📄 Drucken/PDF
+                        </button>
+                        <a href="https://www.google.com/maps/search/?api=1&query=${building.lat},${building.lon}" target="_blank" 
+                           style="background: #10b981; color: white; padding: 6px 12px; border-radius: 6px; text-decoration: none; font-size: 0.85em; display: inline-block; font-weight: 600;">
+                            🗺️ Google Maps
+                        </a>
+                    </div>
                     
-                    <div class="info-grid">
-                        <div class="info-item">
-                            <div class="info-label">☀️ Jährliche Produktion</div>
-                            <div class="info-value">${formatNumber(solar.yearly_kwh || 0)} kWh</div>
+                    <div style="display: flex; gap: 15px; margin-top: 12px;">
+                        <div style="flex: 1; min-width: 0;">
+                            <!-- ☀️ Solar-Potential Section -->
+                            <div style="font-weight: 600; color: #374151; font-size: 0.95em; margin-bottom: 8px; border-bottom: 2px solid #3498db; padding-bottom: 4px;">☀️ Solar-Potential</div>
+                            <div class="info-grid" style="margin-bottom: 15px;">
+                                <div class="info-item">
+                                    <div class="info-label">Jahresertrag</div>
+                                    <div class="info-value" style="color:#22c55e;font-weight:600;">${formatNumber(solar.yearly_kwh || 0)} kWh</div>
+                                </div>
+                                <div class="info-item">
+                                    <div class="info-label">Max. Module</div>
+                                    <div class="info-value">${formatNumber(solar.max_panels || 0)}</div>
+                                </div>
+                                <div class="info-item">
+                                    <div class="info-label">Sonnenstunden</div>
+                                    <div class="info-value">${formatNumber(solar.sunshine_hours || 0)} h/Jahr</div>
+                                </div>
+                                <div class="info-item">
+                                    <div class="info-label">Panel-Fläche</div>
+                                    <div class="info-value">${formatNumber(solar.panel_area_m2 || 0)} m²</div>
+                                </div>
+                                <div class="info-item">
+                                    <div class="info-label">Dachfläche</div>
+                                    <div class="info-value">${formatNumber(solar.area_m2 || 0)} m²</div>
+                                </div>
+                                <div class="info-item">
+                                    <div class="info-label">CO₂-Offset</div>
+                                    <div class="info-value">${formatNumber(solar.co2_offset_kg || 0)} kg/Jahr</div>
+                                </div>
+                            </div>
+
+                            <!-- Two-column layout for Gebäude & Dachmaterial -->
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+                                <!-- 🏗️ Gebäude-Eigenschaften -->
+                                <div>
+                                    <div style="font-weight: 600; color: #374151; font-size: 0.9em; margin-bottom: 8px; border-bottom: 2px solid #f97316; padding-bottom: 4px;">🏗️ Gebäude</div>
+                                    <div style="display: flex; flex-direction: column; gap: 8px;">
+                                        <div class="info-item" style="padding: 6px 8px;">
+                                            <div class="info-label" style="font-size: 0.75em;">Dachform</div>
+                                            <div class="info-value" style="font-size: 0.95em;">${solar.roof_type || 'N/A'}</div>
+                                        </div>
+                                        <div class="info-item" style="padding: 6px 8px;">
+                                            <div class="info-label" style="font-size: 0.75em;">Neigung</div>
+                                            <div class="info-value" style="font-size: 0.95em;">${formatNumber(solar.pitch_degrees || 0)}°</div>
+                                        </div>
+                                        <div class="info-item" style="padding: 6px 8px;">
+                                            <div class="info-label" style="font-size: 0.75em;">Ausrichtung</div>
+                                            <div class="info-value" style="font-size: 0.95em;">${solar.orientation || 'N/A'}</div>
+                                        </div>
+                                        <div class="info-item" style="padding: 6px 8px;">
+                                            <div class="info-label" style="font-size: 0.75em;">Azimuth</div>
+                                            <div class="info-value" style="font-size: 0.95em;">${formatNumber(solar.azimuth_degrees || 0)}°</div>
+                                        </div>
+                        <div class="info-item" style="padding: 6px 8px;">
+                            <div class="info-label" style="font-size: 0.75em;">📍 Koordinaten</div>
+                            <div class="info-value" style="font-size: 0.8em; font-family: monospace;">${building.lat.toFixed(6)}, ${building.lon.toFixed(6)}</div>
                         </div>
-                        <div class="info-item">
-                            <div class="info-label">⚡ Max. Module</div>
-                            <div class="info-value">${formatNumber(solar.max_panels || 0)}</div>
+                                <div>
+                                    <div style="font-weight: 600; color: #374151; font-size: 0.9em; margin-bottom: 8px; border-bottom: 2px solid #10b981; padding-bottom: 4px;">🏠 Dachmaterial</div>
+                                    <div style="display: flex; flex-direction: column; gap: 8px;">
+                                        ${gemini.roof_material ? `
+                                        <div class="info-item" style="padding: 6px 8px;">
+                                            <div class="info-label" style="font-size: 0.75em;">Material</div>
+                                            <div class="info-value" style="font-size: 0.95em;">${gemini.roof_material}</div>
+                                        </div>
+                                        ` : ''}
+                                        ${gemini.roof_color ? `
+                                        <div class="info-item" style="padding: 6px 8px;">
+                                            <div class="info-label" style="font-size: 0.75em;">Farbe</div>
+                                            <div class="info-value" style="font-size: 0.95em;">${gemini.roof_color}</div>
+                                        </div>
+                                        ` : ''}
+                                        ${gemini.roof_condition ? `
+                                        <div class="info-item" style="padding: 6px 8px;">
+                                            <div class="info-label" style="font-size: 0.75em;">Zustand</div>
+                                            <div class="info-value" style="font-size: 0.95em;">${gemini.roof_condition}</div>
+                                        </div>
+                                        ` : ''}
+                                        ${gemini.usable_percentage ? `
+                                        <div class="info-item" style="padding: 6px 8px;">
+                                            <div class="info-label" style="font-size: 0.75em;">Nutzbar</div>
+                                            <div class="info-value" style="font-size: 0.95em;">${gemini.usable_percentage}%</div>
+                                        </div>
+                                        ` : ''}
+                                        ${gemini.complexity ? `
+                                        <div class="info-item" style="padding: 6px 8px;">
+                                            <div class="info-label" style="font-size: 0.75em;">Komplexität</div>
+                                            <div class="info-value" style="font-size: 0.95em;">${gemini.complexity}</div>
+                                        </div>
+                                        ` : ''}
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
-                        <div class="info-item">
-                            <div class="info-label">📐 Dachfläche</div>
-                            <div class="info-value">${formatNumber(solar.area_m2 || 0)} m²</div>
-                        </div>
-                        <div class="info-item">
-                            <div class="info-label">🌿 CO₂-Einsparung</div>
-                            <div class="info-value">${formatNumber(solar.co2_offset_kg || 0)} kg/Jahr</div>
-                        </div>
-                        ${gemini.roof_material ? `
-                        <div class="info-item">
-                            <div class="info-label">🏗️ Dachmaterial</div>
-                            <div class="info-value">${gemini.roof_material}</div>
-                        </div>
-                        ` : ''}
-                        ${gemini.roof_condition ? `
-                        <div class="info-item">
-                            <div class="info-label">⚖️ Zustand</div>
-                            <div class="info-value">${gemini.roof_condition}</div>
-                        </div>
-                        ` : ''}
-                        ${existing.has_pv ? `
-                        <div class="info-item">
-                            <div class="info-label">🔆 Bestehende PV</div>
-                            <div class="info-value">Ja (${existing.count || 0} Anlagen)</div>
+                        
+                        ${building.image ? `
+                        <div style="flex: 0 0 240px;">
+                            <div style="font-weight: 600; margin-bottom: 8px; color: #374151; font-size: 0.9em;">📸 Luftbild</div>
+                            <img src="${building.image}" 
+                                 alt="Dachansicht" 
+                                 style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); cursor: pointer;"
+                                 onclick="window.open('${building.image}', '_blank')"
+                                 title="Klicken für Vollbild">
+                            <div style="font-size: 0.7em; color: #6b7280; margin-top: 4px; text-align: center;">
+                                Klick für Vollbild
+                            </div>
+                            
+                            ${(existing.has_pv || obstaclesText) ? `
+                            <div style="margin-top: 12px; padding: 8px; background: #fef3c7; border-radius: 8px; font-size: 0.8em;">
+                                ${existing.has_pv ? `<div style="margin-bottom: 4px;"><strong>🔆 PV:</strong> Ja (${existing.count || 0})</div>` : ''}
+                                ${obstaclesText ? `<div><strong>⚠️ Hindernisse (${gemini.obstacles.length}):</strong><br><span style="font-size: 0.95em;">${obstaclesText}</span></div>` : ''}
+                            </div>
+                            ` : ''}
+                            
+                            ${gemini.notes ? `
+                            <div style="margin-top: 8px; padding: 8px; background: #f8f9fa; border-radius: 8px; font-size: 0.8em;">
+                                <strong>📝 Hinweise:</strong><br>
+                                <span style="font-size: 0.95em;">${escapeHtml(gemini.notes)}</span>
+                            </div>
+                            ` : ''}
                         </div>
                         ` : ''}
                     </div>
-                    
-                    ${gemini.notes ? `
-                    <div style="margin-top: 15px; padding: 10px; background: #f8f9fa; border-radius: 8px; font-size: 0.9em;">
-                        <strong>📝 Hinweise:</strong><br>
-                        ${gemini.notes}
-                    </div>
-                    ` : ''}
                 </div>
             `;
         }
@@ -713,7 +1117,8 @@
                     
                     const marker = L.marker([building.lat, building.lon], { icon: icon })
                         .bindPopup(createPopupContent(building), {
-                            maxWidth: 400,
+                            maxWidth: 550,
+                            maxHeight: 650,
                             className: 'custom-popup'
                         });
                     
