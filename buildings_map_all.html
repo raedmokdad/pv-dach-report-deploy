@@ -1151,6 +1151,39 @@
             // Hide loading screen
             document.getElementById('loading').classList.add('hidden');
             
+            // Check for URL parameters to open specific building
+            const urlParams = new URLSearchParams(window.location.search);
+            const targetLat = urlParams.get('lat');
+            const targetLon = urlParams.get('lon');
+            
+            if (targetLat && targetLon) {
+                // Find building with matching coordinates
+                const lat = parseFloat(targetLat);
+                const lon = parseFloat(targetLon);
+                const threshold = 0.0001; // ~10 meters
+                
+                const building = buildingsData.find(b => 
+                    Math.abs(b.lat - lat) < threshold && 
+                    Math.abs(b.lon - lon) < threshold
+                );
+                
+                if (building) {
+                    setTimeout(() => {
+                        // Zoom to building location
+                        map.setView([building.lat, building.lon], 18);
+                        
+                        // Find and open the marker
+                        allMarkers.forEach(marker => {
+                            const pos = marker.getLatLng();
+                            if (Math.abs(pos.lat - building.lat) < threshold && 
+                                Math.abs(pos.lng - building.lon) < threshold) {
+                                marker.openPopup();
+                            }
+                        });
+                    }, 500);
+                }
+            }
+            
             console.log('Karte erfolgreich initialisiert!');
         }
 
