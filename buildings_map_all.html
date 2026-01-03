@@ -218,9 +218,9 @@
         }
 
         .info-popup {
-            max-width: 550px;
+            max-width: 800px;
             font-family: 'Segoe UI', sans-serif;
-            max-height: 650px;
+            max-height: 500px;
             overflow-y: auto;
         }
 
@@ -1121,9 +1121,11 @@
                     
                     const marker = L.marker([building.lat, building.lon], { icon: icon })
                         .bindPopup(createPopupContent(building), {
-                            maxWidth: 550,
-                            maxHeight: 650,
-                            className: 'custom-popup'
+                            maxWidth: 800,
+                            maxHeight: 500,
+                            className: 'custom-popup',
+                            autoPan: true,
+                            autoPanPadding: [50, 50]
                         });
                     
                     allMarkers.push(marker);
@@ -1144,6 +1146,49 @@
             addMarkersToMap(buildingsData);
             calculateStats(buildingsData);
             updateFilterCounter(buildingsData.length);
+            
+            // Make popups draggable
+            map.on('popupopen', function(e) {
+                const popup = e.popup;
+                const popupEl = popup._container;
+                if (popupEl) {
+                    const header = popupEl.querySelector('.info-popup h3');
+                    if (header) {
+                        header.style.cursor = 'move';
+                        header.style.userSelect = 'none';
+                        
+                        let isDragging = false;
+                        let startX, startY, startLeft, startTop;
+                        
+                        header.addEventListener('mousedown', function(e) {
+                            isDragging = true;
+                            startX = e.clientX;
+                            startY = e.clientY;
+                            const rect = popupEl.getBoundingClientRect();
+                            startLeft = rect.left;
+                            startTop = rect.top;
+                            popupEl.style.transition = 'none';
+                        });
+                        
+                        document.addEventListener('mousemove', function(e) {
+                            if (isDragging) {
+                                const dx = e.clientX - startX;
+                                const dy = e.clientY - startY;
+                                popupEl.style.left = (startLeft + dx) + 'px';
+                                popupEl.style.top = (startTop + dy) + 'px';
+                                popupEl.style.transform = 'none';
+                            }
+                        });
+                        
+                        document.addEventListener('mouseup', function() {
+                            if (isDragging) {
+                                isDragging = false;
+                                popupEl.style.transition = '';
+                            }
+                        });
+                    }
+                }
+            });
             
             // Hide loading screen
             document.getElementById('loading').classList.add('hidden');
