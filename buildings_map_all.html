@@ -928,6 +928,10 @@
                 }).join(', ');
             }
 
+            // Ensure image path has luftbilder/ prefix
+            const imagePath = building.image || '';
+            const fullImagePath = imagePath.startsWith('luftbilder/') ? imagePath : `luftbilder/${imagePath}`;
+
             return `
                 <div class="info-popup">
                     <h3>${buildingTitle}</h3>
@@ -1042,10 +1046,10 @@
                         ${building.image ? `
                         <div style="flex: 0 0 240px;">
                             <div style="font-weight: 600; margin-bottom: 8px; color: #374151; font-size: 0.9em;">📸 Luftbild</div>
-                            <img src="${building.image}" 
+                            <img src="${fullImagePath}" 
                                  alt="Dachansicht" 
                                  style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); cursor: pointer;"
-                                 onclick="window.open('${building.image}', '_blank')"
+                                 onclick="window.open('${fullImagePath}', '_blank')"
                                  title="Klicken für Vollbild">
                             <div style="font-size: 0.7em; color: #6b7280; margin-top: 4px; text-align: center;">
                                 Klick für Vollbild
