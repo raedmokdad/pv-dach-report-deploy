@@ -1212,16 +1212,23 @@
                             className: 'highlight-popup'
                         });
                         
+                        // Click on marker to open popup
+                        highlightMarker.on('click', function() {
+                            this.openPopup();
+                        });
+                        
                         // Open popup after short delay
                         setTimeout(() => {
                             highlightMarker.openPopup();
                             console.log('✅ Gebäude markiert und hervorgehoben!');
                         }, 500);
                         
-                        // Remove highlight after 10 seconds
-                        setTimeout(() => {
-                            map.removeLayer(highlightMarker);
-                        }, 10000);
+                        // Remove highlight when popup is closed
+                        highlightMarker.on('popupclose', function() {
+                            setTimeout(() => {
+                                map.removeLayer(highlightMarker);
+                            }, 300);
+                        });
                         
                     }, 300);
                 } else {
